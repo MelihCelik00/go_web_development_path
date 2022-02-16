@@ -89,3 +89,27 @@ console.log(email);
 
 console.log(literals);
 
+///////// String Operations /////////
+
+let first_name = `Melih`;
+let middle_name = "Safa";
+let surname = `Celik`;
+console.log("Length of your name: ",first_name.length);
+
+let full_name = `Melih Safa Celik`;
+console.log(full_name.indexOf("Sa"));
+console.log(full_name.lastIndexOf('e'));
+
+console.log(full_name.search("f"));
+
+console.log(full_name.slice(3,9));
+console.log(full_name.slice(3));
+
+console.log(full_name.replace("Safa Celik", "Celik").toLowerCase());
+
+console.log((first_name.concat(' ', middle_name).concat(' ', surname)));
+
+console.log(full_name.charAt(6));
+
+console.log(full_name.split(" "));
+
