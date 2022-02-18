@@ -5,3 +5,6 @@ console.log(h2.innerHTML);
 console.log(h2.innerHTML = "Change Lorem Ipsum");
 console.log(h2.innerHTML);
 
+let link = document.querySelector("ul#listID>li>a");
+link.innerHTML += " --- changing of link information"
+console.log(link.innerHTML);
