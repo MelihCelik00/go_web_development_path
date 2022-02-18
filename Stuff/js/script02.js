@@ -12,3 +12,15 @@ link.innerHTML = "Go to Google!"
 console.log(link.innerHTML);
 link.style.color = "red"; // add css style tag to the html tag
 link.classList.add('btn'); // add class to the html tag
+
+
+// -------------- //
+
+let full_Name = prompt("Please enter your name: ");
+
+console.log(`${full_Name} has entered!`);
+
+
+let greeting = document.querySelector("#title-header-2");
+
+greeting.innerHTML = `Welcome <small style="color:green">${full_Name}</small>`;
