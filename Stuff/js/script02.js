@@ -26,3 +26,44 @@ let greeting = document.querySelector("#title-header-2");
 greeting.innerHTML = `Welcome <small style="color:green">${full_Name}</small>`;
 
 */
+
+/* Ekstralar */
+
+var header1 = document.getElementsByClassName("header-1-class");
+var header2 = document.getElementsByClassName("header-2-class");
+
+for(let i = 0; i < header1.length; i++){
+    header1[i].style.color = "red";
+}
+
+for(let j = 0; j < header2.length; j++){
+    header2[j].style.color = "blue";
+}
+
+
+// ------- Reach nth (first and last in this case) item of list ------- //
+
+
+let item1 = document.querySelector("ul#list>li:first-child");
+console.log(item1);
+console.log(item1.innerHTML);
+
+let item2 = document.querySelector("ul#list>li:last-child");
+console.log(item2);
+console.log(item2.innerHTML);
+
+item1.innerHTML = "First item!";
+item2.innerHTML = "Last item!";
+
+// Let's add new item to the list!
+
+let ulDOM = document.querySelector("ul#list");
+let liDOM = document.createElement('li');
+
+liDOM.innerHTML = "Newly created item."
+
+ulDOM.append(liDOM) // Append to end of the list
+ulDOM.prepend(liDOM) // Append to the head of the list
+
+
+
