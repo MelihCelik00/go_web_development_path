@@ -65,5 +65,17 @@ liDOM.innerHTML = "Newly created item."
 ulDOM.append(liDOM) // Append to end of the list
 ulDOM.prepend(liDOM) // Append to the head of the list
 
+//////////////////////////////////////////////////////
 
+let inData = document.querySelector("input#inputData");
+let btn = document.querySelector("button#clickBtn");
 
+// console.log(inData);
+// console.log(btn);
+
+btn.addEventListener("click", function(){
+    let li = document.createElement("li");
+    li.textContent = inData.value;
+    ulDOM.append(li);
+    inData.value = "";
+});
