@@ -4,12 +4,13 @@ userFormDOM.addEventListener("submit", formHandler);
 
 const alertDOM = document.querySelector("#alert");
 
-const alertFunction = (title, message, className="warning") =>`
-<div class="alert alert-${className} alert-dismissible" role="alert">
-  <strong>${title}</strong> ${message}
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-  </button>
-</div>
+const alertFunction = (title, message, className = "warning") => `
+    <div class="alert alert-${className} alert-dismissible" role="alert">
+    <strong>${title}</strong> ${message}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
 `
 
 function formHandler(event) {
@@ -21,7 +22,7 @@ function formHandler(event) {
         USER_NAME.value = "";
         SCORE.value = "";
     } else {
-        alertDOM.innerHTML = alertFunction("Information:","Missing information.");
+        alertDOM.innerHTML = alertFunction("Information:", "Missing information.");
     }
 }
 
