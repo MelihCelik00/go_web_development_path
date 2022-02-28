@@ -7,7 +7,7 @@ let taskItems = document.getElementsByClassName("taskItem");
 
 let taskArrList = localStorage.getItem("ItemList");
 if(taskArrList != null){
-    reloadFromStorage(taskArrList);
+    //reloadFromStorage(taskArrList); // will be checked later
 }else{
     taskArrList = [];
 }
