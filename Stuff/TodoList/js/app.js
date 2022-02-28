@@ -4,10 +4,16 @@ let todoList = document.querySelector("ul#list");
 const alertDOM = document.querySelector("p#alert");
 let taskItems = document.getElementsByClassName("taskItem");
 // let storageIdCounter = localStorage.getItem("localStorageCounter") ? Number(localStorage.getItem("localStorageCounter")) : 0;
+
 let taskArrList = localStorage.getItem("ItemList");
+if(taskArrList != null){
+    reloadFromStorage(taskArrList);
+}else{
+    taskArrList = [];
+}
 
 let tempTaskList = [];
-
+let storeArr = [];
 
 const toastAlertFunc = (type, msg) => `
 <div class="alert alert-${type} alert-dismissible fade show" role="alert">
@@ -40,9 +46,8 @@ function checkItem(task) {
             return true;
         }
     }
-
-
 };
+
 
 
 function DeleteItem(element) {
@@ -50,9 +55,9 @@ function DeleteItem(element) {
     return 0;
 }
 
-addButtonDOM.addEventListener("click", addItem);
+addButtonDOM.addEventListener("click", addNewItem);
 
-function addItem(event) {
+function addNewItem(event) {
     event.preventDefault();
     // console.log("clicked!!!");
     const isEmpty = taskString => !taskString.trim().length;
@@ -72,20 +77,21 @@ function addItem(event) {
             liDOM.classList.add('taskItem');
             liDOM.innerHTML = inputDOM.value;
             tempTaskList.push(inputDOM.value);
-            let iconDOM = document.createElement("i")
-            iconDOM.classList.add("bi", "bi-x-lg", "close")
+            let iconDOM = document.createElement("i");
+            iconDOM.classList.add("bi", "bi-x-lg", "close");
             iconDOM.setAttribute("aria-label", "Close");
             // append task value to li value
             // add class to li
 
             iconDOM.addEventListener("click", function () { DeleteItem(liDOM) });
-
+            // liDOM.addEventListener("dblclick", taskOk(liDOM)); // Look here sometime!
             liDOM.append(iconDOM);
-            //iconDOM.classList.add("bi","bi-x-lg","close")
+
             // append li to ul dom
             todoList.appendChild(liDOM);
 
-            localStorage.setItem("ItemList", JSON.stringify(liDOM.innerHTML));
+            storeArr.push(inputDOM.value);
+            //localStorage.setItem("ItemList", JSON.stringify(liDOM.innerHTML));
 
             //console.log(liDOM);
             //console.log(localStorage.getItem("ItemList"));
@@ -94,7 +100,23 @@ function addItem(event) {
             inputDOM.value = "";
         }
     }
+    updateToLocalStorage();
+};
 
+// function taskOk(element){    
+//     element.classList.toggle("bg-success")
+//     element.style.textDecoration=(element.style.textDecoration=="line-through")?"none":"line-through"
+// }
 
+function updateToLocalStorage(){
+    taskItems = document.getElementsByClassName("taskItem");
+    // console.log(storeArr);
+    localStorage.setItem("ItemList", JSON.stringify(storeArr));
+};
 
+function reloadFromStorage(list){
+    for(let i = 0;i < list.length;i++){
+        console.log(list[i]);
+        todoList.appendChild(list[i]);
+    }
 }
