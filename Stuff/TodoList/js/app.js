@@ -67,7 +67,7 @@ function addItem(event) {
             closeAlertInTime(2500);
             inputDOM.value = "";
         } else {
-            // create new li element
+            // create new li element 
             let liDOM = document.createElement('li');
             liDOM.classList.add('taskItem');
             liDOM.innerHTML = inputDOM.value;
