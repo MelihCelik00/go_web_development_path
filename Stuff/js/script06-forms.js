@@ -8,4 +8,7 @@ function formSubmit(event){
     let scoreInputDOM = document.querySelector("#score");
     //console.log(scoreInputDOM.value)
     localStorage.setItem('Score', scoreInputDOM.value);
+
+    
+
 }

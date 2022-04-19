@@ -1,5 +1,5 @@
 
-let userFormDOM = document.querySelector("#userForm");
+let userFormDOM = document.querySelector("#liveToastBtn");
 userFormDOM.addEventListener("submit", formHandler);
 
 const alertDOM = document.querySelector("#alert");
