@@ -1,11 +1,10 @@
-# kodluyoruzilkrepo
-Kodluyoruz Eğitimi kapsamında açtığım ilk repo.
+# My Web Development Learning Path
 
-# Kodluyoruz Ilk Repo
+This repository is created for the [Patika.dev](https://www.patika.dev/) NodeJS learning path.
 
-Bu repo [Kodluyoruz](https://www.kodluyoruz.org) Başlangıç Seviye Web Development eğitiminde oluşturduğumuz ilk repodur. İçerisinde bir adet README dosyası, bir adet de index.html barındırıyor.
+In this pathway, I have been learning Javascript, NodeJS, PostgreSQL and so on. 
 
-![Kodluyoruz](https://miro.medium.com/max/2400/2*TZeK0kyHTRHVv3gUi8BtQg.png)
+![Web Developer](https://imgur.com/gallery/8tWSmWq)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
