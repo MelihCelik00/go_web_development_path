@@ -11,3 +11,8 @@ fs.writeFile("./txtfiles/example.txt", "New file!", "utf8", (err) => {
     if (err) console.log(err);
     console.log("File is created successfully!")
 });
+
+fs.writeFile("./json/example.json", "{'name': 'Melih', 'age': '21'}", 'utf8', (err) => {
+    if (err) console.log(err);
+    console.log("Json file is created successfully!")
+});
