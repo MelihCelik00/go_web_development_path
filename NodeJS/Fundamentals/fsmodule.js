@@ -34,3 +34,12 @@ fs.appendFile("./txtfiles/example.txt", "\nSecond row!!!", "utf8", (err) => {
 //     if (err) console.log(err);
 //     console.log("File is deleted!!!!")
 // });
+
+// Create folder(s)
+
+fs.mkdir("uploads/img", {recursive:true}, (err) => {
+    if (err) console.log(err);
+    console.log("Folder(s) created successfully!!");
+});
+
+
