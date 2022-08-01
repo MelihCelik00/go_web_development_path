@@ -15,5 +15,5 @@ function circleCircumference(radius){
 
 module.exports = {
     circleArea,
-    circleCircumference
+    circleCircumference,
 }
