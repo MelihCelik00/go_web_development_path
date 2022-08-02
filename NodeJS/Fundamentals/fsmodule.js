@@ -42,4 +42,7 @@ fs.mkdir("uploads/img", {recursive:true}, (err) => {
     console.log("Folder(s) created successfully!!");
 });
 
-
+fs.rmdir("uploads/img", {recursive:true}, (err) => { // if you just write "uploads" to the path, it will delete the upload folder itself
+    if (err) console.log(err);                      // but in this case it will only delete img folder which is inside upload
+    console.log("Folder(s) deleted successfully!!");
+});
